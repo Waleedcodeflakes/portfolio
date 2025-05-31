@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import logo from "./logo.svg";
 import Portfolio from "./components/Portfolio";
 
 const App = () => {

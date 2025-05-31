@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import profile from "../assets/images/waleed3.jpg";
 import healthFlow from "../assets/images/appointment-system.webp";
 import adnanMotors from "../assets/images/carrental-portal.webp";
-import dsm from "../assets/images/dsm.webp";
 import portfolio from "../assets/images/portfolio.webp";
 import ecommerce from "../assets/images/ecommerce-store.webp";
 import metaSpark from "../assets/images/project-6.webp";
@@ -23,7 +22,6 @@ import {
   Search,
   Globe,
   Users,
-  Award,
   Pin,
 } from "lucide-react";
 
