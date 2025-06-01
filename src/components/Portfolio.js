@@ -8,6 +8,9 @@ import metaSpark from "../assets/images/project-6.webp";
 import french from "../assets/images/french.png";
 import captain from "../assets/images/captain.png";
 import divano from "../assets/images/divano.png";
+import newsApp from "../assets/images/News app.png";
+import ticTac from "../assets/images/tik-tac-toe.jpg";
+import textUtils from "../assets/images/textutils.png";
 import {
   Menu,
   X,
@@ -41,7 +44,7 @@ const Portfolio = () => {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     const sections = document.querySelectorAll("section[id]");
@@ -110,7 +113,7 @@ const Portfolio = () => {
     {
       title: "French Learning Plateform",
       description:
-        "Collaborated in Front-end in a French Learning Learning platform built with HTML,CSS and Java Script.",
+        "Collaborated in Front-end in a French Learning Learning platform built with HTML,CSS and JavaScript.",
       image: french,
       tags: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/Waleedcodeflakes/French-Elite-Tutor-Academy",
@@ -121,7 +124,7 @@ const Portfolio = () => {
       description:
         "A full-functional e-commerce platform built with Ecwid by Lightspeed, for Dutch Citizens.",
       image: divano,
-      tags: ["HTML", "CSS", "JavaScript"],
+      tags: ["Ecwid", "Lightspeed"],
       demo: "https://divano.company.site",
     },
     {
@@ -145,11 +148,40 @@ const Portfolio = () => {
     {
       title: "Portfolio Website",
       description:
-        "A responsive portfolio website for a creative agency with smooth animations and modern design.",
+        "A responsive portfolio website for a creative individual with smooth animations and modern design.",
       image: portfolio,
       tags: ["HTML", "CSS", "JavaScript"],
       github: "#",
       demo: "https://devwaleed.netlify.app",
+    },
+  ];
+
+  const miniprojects = [
+    {
+      title: "News Monkey App",
+      description:
+        "Created news app using News API, created with HTML, CSS and ReactJs.",
+      image: newsApp,
+      tags: ["HTML", "CSS", "ReactJs"],
+      github: "https://github.com/Waleedcodeflakes/News-Monkey-React-App",
+      demo: "#",
+    },
+    {
+      title: "My Text Utils",
+      description:
+        "This is text manipulation app having functions, triming text, case conversion etc.",
+      image: textUtils,
+      tags: ["HTML", "CSS", "ReactJs"],
+      github: "https://github.com/Waleedcodeflakes/My-TextUtils",
+      demo: "#",
+    },
+    {
+      title: "Tic Tac Toe",
+      description: "A game made with fun.",
+      image: ticTac,
+      tags: ["HTML", "ReactJs"],
+      github: "https://github.com/Waleedcodeflakes/Tic-Tac-Toe",
+      demo: "#",
     },
   ];
 
@@ -506,6 +538,67 @@ const Portfolio = () => {
                       </a>
                       <a
                         href={project.demo}
+                        className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors">
+                        <ExternalLink className="w-4 h-4" />
+                        Demo
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mini Projects Section */}
+      <section id="miniprojects" className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible.miniprojects
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}>
+            <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Mini Projects
+            </h2>
+
+            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+              {miniprojects.map((miniprojects, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
+                  <img
+                    src={miniprojects.image}
+                    alt={miniprojects.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-3">
+                      {miniprojects.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4 leading-relaxed">
+                      {miniprojects.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {miniprojects.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-4">
+                      <a
+                        href={miniprojects.github}
+                        className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors">
+                        <Github className="w-4 h-4" />
+                        Code
+                      </a>
+                      <a
+                        href={miniprojects.demo}
                         className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors">
                         <ExternalLink className="w-4 h-4" />
                         Demo
